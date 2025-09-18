@@ -1,0 +1,190 @@
+{
+    "intents": [
+           {
+      "intent": "SlowBrowing",
+      "intentId": "SlowBrowingWK_V1",
+      "entity": [
+        {
+          "id": "is_slow_or_no_browsing",
+          "label": "Slow Browsing or No Browsing",
+          "type": "OPTION",
+          "options": [
+            "SLOW_BROWSING",
+            "NO_BROWSING"
+          ],
+          "user_input": ""
+        },
+        {
+          "id": "AskCustomerToTurnOffDataManager_copy1v",
+          "label": "Would you like to disable Data Manager? Turning it off will allow data usage beyond your data bundle and may deplete your airtime balance.",
+          "type": "OPTION",
+          "options": [
+            "TURN_ON_DATA_MANAGER",
+            "TURN_OFF_DATA_MANAGER"
+          ],
+          "user_input": ""
+        },
+        {
+          "id": "Is3G_4G_LTE_Available_1_copy1v",
+          "label": "Is 3G, 4G, LTE Visible on your device when connected on Network",
+          "type": "OPTION",
+          "options": [
+            "NETWORK_VISIBLE",
+            "NETWORK_NOT_VISIBLE"
+          ],
+          "user_input": ""
+        },
+        {
+          "id": "turn_on_off_data_manager",
+          "label": "Would you like to disable Data Manager? Turning it off will allow data usage beyond your data bundle and may deplete your airtime balance.",
+          "type": "OPTION",
+          "options": [
+            "TURN_OFF",
+            "DO_NOTHING"
+          ],
+          "user_input": ""
+        },
+        {
+          "id": "Is3G_4G_LTE_exist",
+          "label": "Is 3G, 4G, LTE Visible on your device when connected on Network",
+          "type": "OPTION",
+          "options": [
+            "NETWORK_VISIBLE",
+            "NETWORK_NOT_VISIBLE"
+          ],
+          "user_input": ""
+        },
+        {
+          "id": "Is3G_4G_LTE_Available",
+          "label": "Is 3G, 4G, LTE Visible on your device when connected on Network",
+          "type": "OPTION",
+          "options": [
+            "NETWORK_VISIBLE",
+            "NETWORK_NOT_VISIBLE"
+          ],
+          "user_input": ""
+        },
+        {
+          "id": "take_inputs_from_customer",
+          "label": "Are you facing an issue with a specific app or website, or is it a Overall problem?",
+          "type": "OPTION",
+          "options": [
+            "SPECIFIC_ISSUE",
+            "OVERALL_ISSUE"
+          ],
+          "user_input": ""
+        },
+        {
+          "id": "share_website_details",
+          "label": "Kindly provide the details of the app or website where you\u2019re experiencing the issue",
+          "type": "TEXT_INPUT",
+          "options": [
+
+          ],
+          "user_input": ""
+        },
+        {
+          "id": "ask_customer",
+          "label": "Since how many days you are facing",
+          "type": "OPTION",
+          "options": [
+            "DAY_1",
+            "DAY_2_3",
+            "DAY_4_7",
+            "MORE_THAN_7_DAYS"
+          ],
+          "user_input": ""
+        },
+        {
+          "id": "facing_issue_frequency",
+          "label": "Are you facing issue at specific time or all time",
+          "type": "OPTION",
+          "options": [
+            "SPECIFIC_TIME",
+            "ALL_TIME"
+          ],
+          "user_input": ""
+        },
+        {
+          "id": "ask_customer_to_select_time_slot",
+          "label": "Select time slot",
+          "type": "OPTION",
+          "options": [
+            "12AM-9AM-SLOT",
+            "9AM-3PM-SLOT",
+            "3PM-8PM-SLOT",
+            "8PM-12PM-SLOT"
+          ],
+          "user_input": ""
+        },
+        {
+          "id": "confirm_issue_location",
+          "label": "Confirm issue location",
+          "type": "OPTION",
+          "options": [
+            "SPECIFIC_LOCATION",
+            "MULTIPLE_LOCATION",
+            "ALL_LOCATIONS"
+          ],
+          "user_input": ""
+        },
+        {
+          "id": "ask_where_customer_facing_issue",
+          "label": "Where exactly are you facing the issue",
+          "type": "OPTION",
+          "options": [
+            "INDOOR_ISSUE",
+            "OUTDOOR_ISSUE",
+            "BOTH_ISSUE"
+          ],
+          "user_input": ""
+        },
+        {
+          "id": "ask_customer_to_share_location",
+          "label": "Please provide the area name where you're facing the issue.",
+          "type": "TEXT_INPUT",
+          "options": [
+
+          ],
+          "user_input": ""
+        },
+        {
+          "id": "confirm_issue_loc",
+          "label": "Confirm issue location",
+          "type": "OPTION",
+          "options": [
+            "SPECIFIC_LOCATION",
+            "MULTIPLE_LOCATION",
+            "ALL_LOCATIONS"
+          ],
+          "user_input": ""
+        },
+        {
+          "id": "where_customer_facing_issue",
+          "label": "Where exactly are you facing the issue",
+          "type": "OPTION",
+          "options": [
+            "INDOOR_ISSUE",
+            "OUTDOOR_ISSUE",
+            "BOTH_ISSUE"
+          ],
+          "user_input": ""
+        },
+        {
+          "id": "customer_to_share_location",
+          "label": "Please provide the area name where you're facing the issue.",
+          "type": "TEXT_INPUT",
+          "options": [
+
+          ],
+          "user_input": ""
+        }
+      ],
+      "metadata": {
+        "version": "v1.0",
+        "last_updated": "2025-08-17T22:18:26+05:30",
+        "source": "admin-config"
+      }
+    }
+    ]
+}

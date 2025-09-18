@@ -1,0 +1,66 @@
+{
+  "status": "Success",
+  "result": [
+    {
+      "intent": "Network_issue",
+      "is_matched": true,
+      "intentId": "Network_issue",
+      "entity": [
+        {
+          "id": "AskCustomerPhoneNumber_ref",
+          "label": "Please provide your phone number for verification",
+          "type": "text",
+          "options": [],
+          "user_input": "9953546550"
+        },
+        {
+          "id": "AskNetworkIssueType_ref",
+          "label": "What type of network issue are you experiencing?",
+          "type": "options",
+          "options": [
+            "NO_SIGNAL",
+            "CALL_DROPS",
+            "POOR_CALL_QUALITY",
+            "UNABLE_TO_MAKE_CALLS",
+            "UNABLE_TO_RECEIVE_CALLS"
+          ],
+          "response": "UNABLE_TO_MAKE_CALLS"
+        },
+        {
+          "id": "AskIssueLocation_ref",
+          "label": "Where are you experiencing this issue?",
+          "type": "text",
+          "options": [],
+          "user_input": ""
+        },
+        {
+          "id": "AskIssueDuration_ref",
+          "label": "How long have you been experiencing this issue?",
+          "type": "options",
+          "options": [
+            "LESS_THAN_1_HOUR",
+            "1_TO_6_HOURS",
+            "6_TO_24_HOURS",
+            "MORE_THAN_1_DAY"
+          ],
+          "response": "1_TO_6_HOURS"
+        },
+        {
+          "id": "RestartDevice_ref",
+          "label": "Have you tried restarting your device?",
+          "type": "options",
+          "options": [
+            "YES",
+            "NO"
+          ],
+          "response": ""
+        }
+      ],
+      "metadata": {
+        "version": "v1.0",
+        "last_updated": "2025-09-03T07:45:54.268631",
+        "source": "admin-config"
+      }
+    }
+  ]
+}
