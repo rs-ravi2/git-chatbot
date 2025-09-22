@@ -1,4 +1,4 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Depends
 from pydantic import BaseModel
 from datetime import datetime
 import logging
@@ -8,6 +8,7 @@ from src.services.intent_service import intent_service
 from src.services.feedback_service import feedback_service
 from src.config.settings import settings
 from src.models.schemas import ConversationMetadata, ProcessMessageRequest, FeedbackAnalysisRequest
+from src.utils.auth import verify_api_key
 
 # Initialize FastAPI app
 app = FastAPI(title="Chatbot AI", version="1.0.0")
@@ -17,7 +18,10 @@ logging.basicConfig(level=getattr(logging, settings.LOG_LEVEL))
 logger = logging.getLogger(__name__)
 
 @app.post("/v1/chatbot-ai/feedback-analysis")
-async def analyze_feedback(request: FeedbackAnalysisRequest):
+async def analyze_feedback(
+    request: FeedbackAnalysisRequest,
+    api_key: str = Depends(verify_api_key)
+):
     """
     Analyze sentiment of customer feedback message.
     Returns sentiment, translation, and keywords.
@@ -49,7 +53,10 @@ async def analyze_feedback(request: FeedbackAnalysisRequest):
 
 
 @app.post("/v1/chatbot-ai/intent-entity-detection")
-async def intent_entity_detection(request: ProcessMessageRequest):
+async def intent_entity_detection(
+    request: ProcessMessageRequest,
+    api_key: str = Depends(verify_api_key)
+):
     """
     Process user message - classify intent and extract fields.
     Returns entities with user_input field populated (no response field).
@@ -79,7 +86,7 @@ async def intent_entity_detection(request: ProcessMessageRequest):
 
 @app.get("/health")
 async def health_check():
-    """Health check endpoint."""
+    """Health check endpoint - no authentication required."""
     return {
         "status": "OK",
         "timestamp": datetime.now().isoformat(),
@@ -90,7 +97,7 @@ async def health_check():
 
 @app.get("/")
 async def root():
-    """Root endpoint."""
+    """Root endpoint - no authentication required."""
     return {
         "message": "Chatbot AI Service",
         "version": "1.0.0",
@@ -99,7 +106,10 @@ async def root():
 
 
 @app.post("/v1/chatbot-ai/validate-entities")
-async def validate_entities_endpoint(entities: list):
+async def validate_entities_endpoint(
+    entities: list,
+    api_key: str = Depends(verify_api_key)
+):
     """
     Endpoint to validate entity structure and ensure proper format.
     """
@@ -127,9 +137,8 @@ async def validate_entities_endpoint(entities: list):
         raise HTTPException(status_code=500, detail="Error validating entities")
 
 
-# Optional: Add endpoint to reload intents data
 @app.post("/v1/chatbot-ai/reload-intents")
-async def reload_intents():
+async def reload_intents(api_key: str = Depends(verify_api_key)):
     """Reload intents data from file."""
     try:
         from src.data.loader import data_loader
